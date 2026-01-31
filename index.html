@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide TCP/IP et Réseaux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0078d7;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0078d7;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guide Complet TCP/IP, Réseaux et Maintenance des Serveurs</h1>
+        <p>Apprenez les fondamentaux des réseaux, la maintenance des serveurs et le langage binaire</p>
+    </header>
+    
+    <nav>
+        <a href="#tcp-ip">TCP/IP</a>
+        <a href="#serveurs">Maintenance des Serveurs</a>
+        <a href="#binaire">Langage Binaire</a>
+        <a href="#web">Développement Web</a>
+        <a href="#outils">Outils</a>
+    </nav>
+    
+    <section id="tcp-ip">
+        <h2>1. TCP/IP : Fondements des Réseaux</h2>
+        <p>TCP/IP est la colonne vertébrale d'Internet. Il définit comment les données sont échangées entre les machines.</p>
+        
+        <h3>Modèle TCP/IP</h3>
+        <pre>
++-------------------+
+| Application (HTTP)| ← Couche 4
++-------------------+
+| Transport (TCP)   | ← Couche 3
++-------------------+
+| Internet (IP)     | ← Couche 2
++-------------------+
+| Accès Réseau      | ← Couche 1
++-------------------+
+        </pre>
+        
+        <h3>Exemple : Utilisation de ping</h3>
+        <p>Ouvrez un terminal et tapez :</p>
+        <pre><code>ping google.com</code></pre>
+        <p>Cela envoie des paquets ICMP à Google et mesure le temps de réponse.</p>
+    </section>
+    
+    <section id="serveurs">
+        <h2>2. Maintenance des Serveurs</h2>
+        <p>Un serveur est une machine ou un programme qui fournit des services à d'autres machines (clients).</p>
+        
+        <h3>Installation d'un serveur web (Nginx)</h3>
+        <p>Sur Ubuntu, installez Nginx avec :</p>
+        <pre><code>sudo apt update
+sudo apt install nginx
+sudo systemctl start nginx</code></pre>
+        
+        <h3>Sécurisation</h3>
+        <p>Activez le pare-feu UFW :</p>
+        <pre><code>sudo ufw allow 80/tcp
+sudo ufw enable</code></pre>
+    </section>
+    
+    <section id="binaire">
+        <h2>3. Langage Binaire et Bas Niveau</h2>
+        <p>Le binaire est le langage de base des ordinateurs, composé de 0 et de 1.</p>
+        
+        <h3>Exemple : Conversion décimal → binaire</h3>
+        <p>Le nombre décimal <code>5</code> est <code>101</code> en binaire.</p>
+        
+        <h3>Assembleur</h3>
+        <p>Exemple de programme en assembleur (x86) :</p>
+        <pre><code>section .data
+    num1 dd 10
+    num2 dd 20
+    result dd 0
+
+section .text
+    global _start
+_start:
+    mov eax, [num1]
+    add eax, [num2]
+    mov [result], eax
+    mov eax, 1
+    int 0x80</code></pre>
+    </section>
+    
+    <section id="web">
+        <h2>4. Lien avec le Développement Web</h2>
+        <p>TCP/IP est utilisé pour les requêtes HTTP. Par exemple, lorsque vous visitez un site web, votre navigateur envoie une requête TCP au serveur.</p>
+        
+        <h3>Mini-serveur Python</h3>
+        <p>Créez un serveur web simple avec Python :</p>
+        <pre><code>from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+server = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+server.serve_forever()</code></pre>
+        <p>Accédez à <a href="http://localhost:8000">http://localhost:8000</a> dans votre navigateur.</p>
+    </section>
+    
+    <section id="outils">
+        <h2>5. Outils Recommandés</h2>
+        <ul>
+            <li><strong>Wireshark</strong> : Analyse de paquets réseau.</li>
+            <li><strong>GDB</strong> : Débogage bas niveau.</li>
+            <li><strong>Docker</strong> : Conteneurisation pour les environnements de test.</li>
+            <li><strong>htop</strong> : Surveillance des processus.</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>© 2024 Guide TCP/IP et Réseaux. Tous droits réservés.</p>
+        <p>Dépôt GitHub : <a href="https://github.com/PRAFUL33290/TCP-IP">https://github.com/PRAFUL33290/TCP-IP</a></p>
+    </footer>
+</body>
+</html>
