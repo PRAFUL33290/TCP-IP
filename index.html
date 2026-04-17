@@ -5,80 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide TCP/IP et Réseaux</title>
     <style>
+        :root {
+            --bg: #f1f5f9;
+            --text: #1e293b;
+            --primary: #0ea5e9;
+            --primary-dark: #0369a1;
+            --card: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
+            background: linear-gradient(180deg, #e0f2fe 0%, var(--bg) 35%);
+            color: var(--text);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
         }
         header {
-            background: #0078d7;
+            background: linear-gradient(120deg, #0f172a 10%, #0c4a6e 90%);
             color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
+            margin: 20px auto 0;
+            border-radius: 18px;
+            max-width: 1100px;
+            overflow: hidden;
+            box-shadow: 0 18px 38px rgba(15, 23, 42, 0.25);
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 24px;
+            padding: 36px;
+        }
+        .hero h1 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #e0f2fe;
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+        .hero p {
             margin-bottom: 20px;
+            color: #bae6fd;
+        }
+        .hero a {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .hero a:hover {
+            background: var(--primary-dark);
+        }
+        .hero-image img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            border: 2px solid rgba(186, 230, 253, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         nav {
-            background: #333;
-            padding: 10px;
-            border-radius: 5px;
+            background: #0f172a;
+            padding: 14px 16px;
+            border-radius: 12px;
             margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(15, 23, 42, 0.15);
         }
         nav a {
-            color: white;
+            color: #f8fafc;
             margin-right: 15px;
             text-decoration: none;
+            font-weight: 600;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #7dd3fc;
         }
         section {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
+            background: var(--card);
+            padding: 22px;
+            border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e2e8f0;
         }
-        h1, h2 {
-            color: #0078d7;
+        h2 {
+            color: #0c4a6e;
         }
         code {
-            background: #f0f0f0;
+            background: #f1f5f9;
             padding: 2px 5px;
             border-radius: 3px;
             font-family: monospace;
         }
         pre {
-            background: #f0f0f0;
+            background: #f8fafc;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
             overflow-x: auto;
+            border: 1px solid #e2e8f0;
         }
         footer {
             text-align: center;
             margin-top: 20px;
-            color: #666;
+            color: #475569;
+        }
+        footer a {
+            color: #0369a1;
+        }
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Guide Complet TCP/IP, Réseaux et Maintenance des Serveurs</h1>
-        <p>Apprenez les fondamentaux des réseaux, la maintenance des serveurs et le langage binaire</p>
+        <div class="hero">
+            <div>
+                <h1>Guide Complet TCP/IP, Réseaux et Maintenance des Serveurs</h1>
+                <p>Apprenez les fondamentaux des réseaux, la maintenance des serveurs et le langage binaire.</p>
+                <a href="#tcp-ip">Commencer l’apprentissage</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Infrastructure réseau et serveurs">
+            </div>
+        </div>
     </header>
-    
-    <nav>
-        <a href="#tcp-ip">TCP/IP</a>
-        <a href="#serveurs">Maintenance des Serveurs</a>
-        <a href="#binaire">Langage Binaire</a>
-        <a href="#web">Développement Web</a>
-        <a href="#outils">Outils</a>
-    </nav>
-    
-    <section id="tcp-ip">
+
+    <div class="container">
+        <nav>
+            <a href="#tcp-ip">TCP/IP</a>
+            <a href="#serveurs">Maintenance des Serveurs</a>
+            <a href="#binaire">Langage Binaire</a>
+            <a href="#web">Développement Web</a>
+            <a href="#outils">Outils</a>
+        </nav>
+
+        <section id="tcp-ip">
         <h2>1. TCP/IP : Fondements des Réseaux</h2>
         <p>TCP/IP est la colonne vertébrale d'Internet. Il définit comment les données sont échangées entre les machines.</p>
         
@@ -99,9 +175,9 @@
         <p>Ouvrez un terminal et tapez :</p>
         <pre><code>ping google.com</code></pre>
         <p>Cela envoie des paquets ICMP à Google et mesure le temps de réponse.</p>
-    </section>
-    
-    <section id="serveurs">
+        </section>
+
+        <section id="serveurs">
         <h2>2. Maintenance des Serveurs</h2>
         <p>Un serveur est une machine ou un programme qui fournit des services à d'autres machines (clients).</p>
         
@@ -115,9 +191,9 @@ sudo systemctl start nginx</code></pre>
         <p>Activez le pare-feu UFW :</p>
         <pre><code>sudo ufw allow 80/tcp
 sudo ufw enable</code></pre>
-    </section>
-    
-    <section id="binaire">
+        </section>
+
+        <section id="binaire">
         <h2>3. Langage Binaire et Bas Niveau</h2>
         <p>Le binaire est le langage de base des ordinateurs, composé de 0 et de 1.</p>
         
@@ -139,9 +215,9 @@ _start:
     mov [result], eax
     mov eax, 1
     int 0x80</code></pre>
-    </section>
-    
-    <section id="web">
+        </section>
+
+        <section id="web">
         <h2>4. Lien avec le Développement Web</h2>
         <p>TCP/IP est utilisé pour les requêtes HTTP. Par exemple, lorsque vous visitez un site web, votre navigateur envoie une requête TCP au serveur.</p>
         
@@ -152,9 +228,9 @@ _start:
 server = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
 server.serve_forever()</code></pre>
         <p>Accédez à <a href="http://localhost:8000">http://localhost:8000</a> dans votre navigateur.</p>
-    </section>
-    
-    <section id="outils">
+        </section>
+
+        <section id="outils">
         <h2>5. Outils Recommandés</h2>
         <ul>
             <li><strong>Wireshark</strong> : Analyse de paquets réseau.</li>
@@ -162,11 +238,12 @@ server.serve_forever()</code></pre>
             <li><strong>Docker</strong> : Conteneurisation pour les environnements de test.</li>
             <li><strong>htop</strong> : Surveillance des processus.</li>
         </ul>
-    </section>
-    
-    <footer>
-        <p>© 2024 Guide TCP/IP et Réseaux. Tous droits réservés.</p>
-        <p>Dépôt GitHub : <a href="https://github.com/PRAFUL33290/TCP-IP">https://github.com/PRAFUL33290/TCP-IP</a></p>
-    </footer>
+        </section>
+
+        <footer>
+            <p>© 2024 Guide TCP/IP et Réseaux. Tous droits réservés.</p>
+            <p>Dépôt GitHub : <a href="https://github.com/PRAFUL33290/TCP-IP">https://github.com/PRAFUL33290/TCP-IP</a></p>
+        </footer>
+    </div>
 </body>
 </html>
