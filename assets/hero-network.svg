@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc" aria-describedby="desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
   <title id="title">Illustration réseau TCP/IP</title>
   <desc id="desc">Illustration de serveurs reliés par des connexions réseau</desc>
   <defs>
